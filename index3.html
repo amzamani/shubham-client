@@ -286,7 +286,7 @@
                         <p class="card-price-monthly" id="card1Price">(paid monthly)</p>
                         </p>
                         <a class="mt-4 block rounded border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 sm:mt-6"
-                            href="#">Get Started</a>
+                            href="/form.html" id="start1Link">Get Started</a>
                     </div>
                 </div>
                 <!-- Card 2 -->
@@ -322,7 +322,7 @@
                         <p class="card-price-monthly" id="card1Price">(paid monthly)</p>
                         </p>
                         <a class="mt-4 block rounded border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 sm:mt-6"
-                            href="#">Get Started</a>
+                            href="/form.html" id="start2Link">Get Started</a>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -361,12 +361,12 @@
                         <p class="card-price-monthly" id="card1Price">(paid monthly)</p>
                         </p>
                         <a class="mt-4 block rounded border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 sm:mt-6"
-                            href="#">Get Started</a>
+                            href="/form.html" id="start3Link">Get Started</a>
                     </div>
                 </div>
             </div>
             <button id="toggleButtonFeatures"
-                class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-600 flex items-center justify-center w-full"
+                class="mt-4 px-4 py-2 rounded bg-transparent text-blue-600 flex items-center justify-center w-full"
                 style="margin-top: 5vh;">
                 <span id="toggleFButton">View All Features</span>
                 <svg id="chevronIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
@@ -411,10 +411,12 @@
                             </div>
                         </div>
                         <div class="mt-4">
-                            <button
+                            <!-- <button
                                 class="px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-blue-600 hover:bg-blue-600 active:bg-blue-700">
                                 Get Started
-                            </button>
+                            </button> -->
+                            <a class="w-full block rounded border border-blue-600 bg-blue-600 px-3 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 "
+                            href="/form.html">Get Started</a>
                         </div>
                     </li>
                     <li class="flex flex-col w-full">
@@ -428,10 +430,8 @@
                             </div>
                         </div>
                         <div class="mt-4">
-                            <button
-                                class="px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-blue-600 hover:bg-blue-600 active:bg-blue-700">
-                                Get Started
-                            </button>
+                            <a class="w-full block rounded border border-blue-600 bg-blue-600 px-3 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 "
+                            href="/form.html">Get Started</a>
                         </div>
                     </li>
                     <li class="flex flex-col w-full">
@@ -445,10 +445,8 @@
                             </div>
                         </div>
                         <div class="mt-4">
-                            <button
-                                class="px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-blue-600 hover:bg-blue-600 active:bg-blue-700">
-                                Get Started
-                            </button>
+                            <a class="w-full block rounded border border-blue-600 bg-blue-600 px-3 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 "
+                            href="/form.html">Get Started</a>
                         </div>
                     </li>
                 </ul>
@@ -1378,7 +1376,72 @@
 
         productSize.addEventListener('change', updateInvPrices);
 
+        const start1Link = document.getElementById('start1Link');
 
+        start1Link.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('addOnsObj', addOnsObj);
+            console.log('basePrice1', basePrice1.textContent);
+            console.log('isMonthly', isMonthly);
+            console.log('plan 1 link')
+            console.log('totalPrice1', totalPrice1.textContent);
+            let url = new URL(start1Link.href);
+            url.searchParams.set('addOns', JSON.stringify(addOnsObj));
+            url.searchParams.set('isMonthly', isMonthly);
+            url.searchParams.set('plan', 1);
+            url.searchParams.set('basePrice1', basePrice1.textContent);
+            url.searchParams.set('totalPrice1', totalPrice1.textContent);
+            start1Link.href = url.href;
+            console.log('url', start1Link.href);
+
+            window.location.href = start1Link.href;
+
+
+
+
+        })
+
+        const start2Link = document.getElementById('start2Link');
+
+        start2Link.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('addOnsObj', addOnsObj);
+            console.log('basePrice2', basePrice2.textContent);
+            console.log('isMonthly', isMonthly);
+            console.log('plan 2 link')
+            console.log('totalPrice2', totalPrice2.textContent);
+            let url = new URL(start2Link.href);
+            url.searchParams.set('addOns', JSON.stringify(addOnsObj));
+            url.searchParams.set('isMonthly', isMonthly);
+            url.searchParams.set('plan', 2);
+            url.searchParams.set('basePrice1', basePrice2.textContent);
+            url.searchParams.set('totalPrice1', totalPrice2.textContent);
+            start2Link.href = url.href;
+            console.log('url', start2Link.href);
+
+            window.location.href = start2Link.href;
+        })
+
+        const start3Link = document.getElementById('start3Link');
+
+        start3Link.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('addOnsObj', addOnsObj);
+            console.log('basePrice3', basePrice3.textContent);
+            console.log('isMonthly', isMonthly);
+            console.log('plan 3 link')
+            console.log('totalPrice3', totalPrice3.textContent);
+            let url = new URL(start3Link.href);
+            url.searchParams.set('addOns', JSON.stringify(addOnsObj));
+            url.searchParams.set('isMonthly', isMonthly);
+            url.searchParams.set('plan', 3);
+            url.searchParams.set('basePrice1', basePrice3.textContent);
+            url.searchParams.set('totalPrice1', totalPrice3.textContent);
+            start3Link.href = url.href;
+            console.log('url', start3Link.href);
+
+            window.location.href = start3Link.href;
+        })
 
 
 

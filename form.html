@@ -10,28 +10,39 @@
 
 <body>
 
-   <style>
-    .loader {
-        border: 16px solid #f3f3f3;
-        border-radius: 50%;
-        border-top: 16px solid #3498db;
-        width: 1vh;
-        height: 1vh;
-        -webkit-animation: spin 2s linear infinite; /* Safari */
-        animation: spin 2s linear infinite;
-    }
+    <style>
+        .loader {
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            width: 1vh;
+            height: 1vh;
+            -webkit-animation: spin 2s linear infinite;
+            /* Safari */
+            animation: spin 2s linear infinite;
+        }
 
-    /* Safari */
-    @-webkit-keyframes spin {
-        0% { -webkit-transform: rotate(0deg); }
-        100% { -webkit-transform: rotate(360deg); }
-    }
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
 
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-   </style>
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
     <div>
 
 
@@ -41,23 +52,23 @@
                     <h2 class="mb-4 text-xl font-semibold">Services added:</h2>
                     <div class="space-y-2">
                         <div class="flex justify-between">
-                            <span>Rewards &amp; HR Management</span>
-                            <span>$250</span>
+                            <span id="planName"></span>
+                            <span id="planPrice"></span>
                         </div>
                         <br>
                         <br>
                         <h3 class="mt-4 mb-2 text-lg font-semibold">Additional:</h3>
                         <div class="flex justify-between">
                             <span>SMS/Email</span>
-                            <span>$10</span>
+                            <span id="smsPrice"></span>
                         </div>
                         <div class="flex justify-between">
                             <span>Auto Scheduling</span>
-                            <span>$5.00</span>
+                            <span id="autoPrice"></span>
                         </div>
                         <div class="flex justify-between">
                             <span>Inventory Management</span>
-                            <span>$5.00</span>
+                            <span id="invPrice"></span>
                         </div>
                     </div>
                     <div class="flex justify-between mt-6">
@@ -68,7 +79,7 @@
 
                     </div>
                 </div>
-                <form id="dialogForm" action="https://formsubmit.co/65560fad30a3f8d83d3e2986e2ee413a" method="POST">
+                <form method="POST" id="form">
                     <!-- <label for="name">Name:</label>
                     <input type="text" id="name" name="name">
                     <label for="email">Email:</label>
@@ -81,6 +92,9 @@
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html">
                     <input type="submit" value="Submit"> -->
+
+
+                    <input type="hidden" name="access_key" value="c9a84ed4-e52e-4bc6-9ec0-5fda21355ce9">
                     <div class="w-full p-6 md">
                         <div class="grid grid-cols-2 gap-4">
                             <div class="space-y-2">
@@ -91,7 +105,8 @@
                                 </label>
                                 <input
                                     class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                    type="text" name="name" id="first-name" placeholder="Enter your first name" required />
+                                    type="text" name="name" id="first-name" placeholder="Enter your first name"
+                                    required />
                             </div>
                             <div class="space-y-2">
                                 <label
@@ -112,7 +127,7 @@
                             </label>
                             <input
                                 class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                placeholder="Enter your email" type="email"  id="email" name="email" required />
+                                placeholder="Enter your email" type="email" id="email" name="email" required />
                         </div>
                         <div class="space-y-2 mt-4">
                             <label
@@ -128,29 +143,49 @@
                             <label
                                 class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                                 for="company-name">
-                                Company Name
+                                Company Name (Optional)
                             </label>
                             <input
                                 class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                                id="company-name" placeholder="Enter your company name" name="company-name" required/>
+                                id="company-name" placeholder="Enter your company name" name="company-name" />
+                        </div>
+                        <div class="space-y-2 mt-4">
+                            <label
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                for="company-name">
+                                Company Category (Optional)
+                            </label>
+
+
+                            <select id="productSize"
+                                class="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                                name="company-category">
+                                <option value="Not-Selected">Select Category</option>
+                                <option value="Shaft">Shaft</option>
+                                <option value="Non-Shaft">Non Shaft</option>
+
+                            </select>
+
+
                         </div>
                         <div class="space-y-2 mt-4">
                             <label
                                 class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                                 for="company-description">
-                                Company Description
+                                Company Description (Optional)
                             </label>
                             <textarea
                                 class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
-                                id="company-description" placeholder="Enter your company description" name="company-description" required></textarea>
+                                id="company-description" placeholder="Enter your company description"
+                                name="company-description"></textarea>
                         </div>
-                        <input type="hidden" name="price" value="">
-                        <!-- <input type="hidden" name="_captcha" value="false"> -->
-                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html">
+                        
+                        
                         <button id="submit" type="submit" value="Submit"
                             class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-white hover:bg-primary/90 h-10 px-4 py-2 w-full mt-6 bg-blue-600">
                             Submit
                         </button>
+                        <div id="result"></div>
                     </div>
                 </form>
             </div>
@@ -159,19 +194,154 @@
 
     <script>
 
+    var MailObj = {
+            addOns: {
+                'add-on-sms': 0,
+                'add-on-auto': 0,
+                'add-on-inventory': 0
+            },
+            isMonthlyPlan: true,
+            plan: 0,
+            basePriceMail: 0,
+            totalPriceMail: 0,
+        };
+
 
 
         window.onload = function () {
             var urlParams = new URLSearchParams(window.location.search);
-            var Uprice = urlParams.get('price');
-            document.getElementById('dialogPrice').innerText = Uprice;
-            document.querySelector('input[name="price"]').value = Uprice;
-            console.log(Uprice);
+
+
+
+
+            var addOns = JSON.parse(decodeURIComponent(urlParams.get('addOns')));
+            var isMonthly = urlParams.get('isMonthly') === 'true';
+            var plan = urlParams.get('plan');
+            var totalPrice1 = urlParams.get('totalPrice1');
+            var basePrice1 = urlParams.get('basePrice1');
+
+            console.log(addOns); // This will log the object { "add-on-auto": 0, "add-on-sms": 0, "add-on-inventory": 0 }
+            console.log(isMonthly); // This will log true if isMonthly is 'true', false otherwise
+            console.log(plan); // This will log the value of plan
+            console.log(totalPrice1); // This will log the value of totalPrice
+            console.log(basePrice1); // This will log the value of basePrice1
+
+
+
+
+            if (plan == 1) {
+                document.getElementById('planName').innerText = 'Loyalty';
+                MailObj.plan = 'Loyalty';
+                addOns['add-on-auto'] = 0;
+
+            }
+            else if (plan == 2) {
+                document.getElementById('planName').innerText = 'Workforce Management';
+                MailObj.plan = 'Workforce Management';
+                addOns['add-on-sms'] = 0;
+            }
+            else if (plan == 3) {
+                document.getElementById('planName').innerText = 'Loyalty and Workforce Management';
+                MailObj.plan = 'Loyalty and Workforce Management';
+
+            } else {
+                document.getElementById('planName').innerText = 'No plan selected';
+                MailObj.plan = 'No plan selected';
+            }
+
+
+
+            let newFormPrice = 0;
+            if (isMonthly) {
+                MailObj.isMonthlyPlan = true;
+                newFormPrice = totalPrice1;
+                document.getElementById('dialogPrice').innerText = '$' + totalPrice1 + ' /month';
+                MailObj.totalPriceMail = totalPrice1;
+                document.getElementById('planPrice').innerText = '$' + basePrice1 + ' /month';
+                MailObj.basePriceMail = basePrice1;
+                document.getElementById('smsPrice').innerText = '$' + addOns['add-on-sms']; + ' /month';
+                MailObj.addOns['add-on-sms'] = addOns['add-on-sms'];
+                document.getElementById('autoPrice').innerText = '$' + addOns['add-on-auto']; + ' /month';
+                MailObj.addOns['add-on-auto'] = addOns['add-on-auto'];
+                document.getElementById('invPrice').innerText = '$' + addOns['add-on-inventory']; + ' /month';
+                MailObj.addOns['add-on-inventory'] = addOns['add-on-inventory'];
+            } else {
+                MailObj.isMonthlyPlan = false;
+                document.getElementById('dialogPrice').innerText = '$' + (totalPrice1 * 12) + ' /year';
+                MailObj.totalPriceMail = (totalPrice1*12);
+                document.getElementById('planPrice').innerText = '$' + (basePrice1 * 12) + ' /year';
+                MailObj.basePriceMail = (basePrice1*12);
+                document.getElementById('smsPrice').innerText = '$' + addOns['add-on-sms'] * 12; + ' /year';
+                MailObj.addOns['add-on-sms'] = addOns['add-on-sms'];
+                document.getElementById('autoPrice').innerText = '$' + addOns['add-on-auto'] * 12; + ' /year';
+                MailObj.addOns['add-on-auto'] = addOns['add-on-auto'];
+                document.getElementById('invPrice').innerText = '$' + addOns['add-on-inventory'] * 12; + ' /year';
+                MailObj.addOns['add-on-inventory'] = addOns['add-on-inventory'];
+            }
+
+           
+
         };
 
-        document.getElementById('submit').addEventListener('click', function() {
-            this.innerHTML = '<div class="loader"></div>';
+        const form = document.getElementById('form');
+        const result = document.getElementById('result');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            // formData.append('plan', "$25/month");
+            // formData.append('add_on', 'sms + auto scheduling');
+            formData.append('plan', MailObj.plan);
+            formData.append('isMonthly', MailObj.isMonthlyPlan);
+            formData.append('basePrice', MailObj.basePriceMail);
+            if(MailObj.isMonthlyPlan){
+                formData.append('add_on_sms', MailObj.addOns['add-on-sms']);
+                formData.append('add_on_auto', MailObj.addOns['add-on-auto']);
+                formData.append('add_on_inventory', MailObj.addOns['add-on-inventory']);
+
+            }
+            else{
+                formData.append('add_on_sms', MailObj.addOns['add-on-sms']*12);
+                formData.append('add_on_auto', MailObj.addOns['add-on-auto']*12);
+                formData.append('add_on_inventory', MailObj.addOns['add-on-inventory']*12);
+
+            }
+            formData.append('totalPrice', MailObj.totalPriceMail);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            result.innerHTML = "Please wait..."
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let json = await response.json();
+                    if (response.status == 200) {
+                        result.innerHTML = "Form submitted successfully";
+                    } else {
+                        console.log(response);
+                        result.innerHTML = json.message;
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    result.innerHTML = "Something went wrong!";
+                })
+                .then(function () {
+                    form.reset();
+                    setTimeout(() => {
+                        result.style.display = "none";
+                        window.location.href = "/thanks.html";
+                    }, 3000);
+                });
         });
+
+
     </script>
 </body>
 
