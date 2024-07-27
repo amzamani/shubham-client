@@ -42,7 +42,7 @@
         }
 
         .toggle-btn.active {
-            background-color: #007bff;
+            background-color: #2563eb;
             color: #fff;
         }
 
@@ -53,7 +53,7 @@
         }
 
         .get-started-btn {
-            background-color: #007bff;
+            background-color: #2563eb;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -404,50 +404,51 @@
                         <div class="flex-grow">
                             <div class="text-gray-700 font-medium">Loyalty</div>
                         </div>
-                        <div class="flex-grow flex items-end">
-                            <div class="text-gray-800 text-3xl font-semibold">
-                                <span>$10</span>
-                                <span class="text-xl text-gray-600 font-normal">/mo</span>
-                            </div>
-                        </div>
+
                         <div class="mt-4">
                             <!-- <button
                                 class="px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-blue-600 hover:bg-blue-600 active:bg-blue-700">
                                 Get Started
                             </button> -->
-                            <a class="w-full block rounded border border-blue-600 bg-blue-600 px-3 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 "
-                            href="/form.html">Get Started</a>
+                            <!-- <a class="w-full block rounded border border-blue-600 bg-blue-600 px-3 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 "
+                            href="/form.html">Get Started</a> -->
+                            <p class="mt-2 sm:mt-4">
+                                <strong class="text-3xl font-bold text-gray-900 sm:text-4xl">$<span
+                                        id="compareTotalPrice1">10</span> </strong>
+                                <span class="text-sm font-medium text-gray-700">/month</span>
+                            <p class="card-price-monthly" id="card1Price">(paid monthly)</p>
+                            </p>
+                            <a class="mt-4 block rounded border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 sm:mt-6"
+                                href="/form.html" id="getStart1Link">Get Started</a>
+
+
                         </div>
                     </li>
                     <li class="flex flex-col w-full">
                         <div class="flex-grow">
                             <div class="text-gray-700 font-medium">Workforce Management</div>
                         </div>
-                        <div class="flex-grow flex items-end">
-                            <div class="text-gray-800 text-3xl font-semibold">
-                                <span>$15</span>
-                                <span class="text-xl text-gray-600 font-normal">/mo</span>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <a class="w-full block rounded border border-blue-600 bg-blue-600 px-3 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 "
-                            href="/form.html">Get Started</a>
-                        </div>
+                        <p class="mt-2 sm:mt-4">
+                            <strong class="text-3xl font-bold text-gray-900 sm:text-4xl">$<span
+                                    id="compareTotalPrice2">15</span> </strong>
+                            <span class="text-sm font-medium text-gray-700">/month</span>
+                        <p class="card-price-monthly" id="card1Price">(paid monthly)</p>
+                        </p>
+                        <a class="mt-4 block rounded border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 sm:mt-6"
+                            href="/form.html" id="getStart2Link">Get Started</a>
                     </li>
                     <li class="flex flex-col w-full">
                         <div class="flex-grow">
                             <div class="text-gray-700 font-medium">Loyalty and Workforce Management</div>
                         </div>
-                        <div class="flex-grow flex items-end">
-                            <div class="text-gray-800 text-3xl font-semibold">
-                                <span>$25</span>
-                                <span class="text-xl text-gray-600 font-normal">/mo</span>
-                            </div>
-                        </div>
-                        <div class="mt-4">
-                            <a class="w-full block rounded border border-blue-600 bg-blue-600 px-3 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 "
-                            href="/form.html">Get Started</a>
-                        </div>
+                        <p class="mt-2 sm:mt-4">
+                            <strong class="text-3xl font-bold text-gray-900 sm:text-4xl">$<span
+                                    id="compareTotalPrice3">25</span> </strong>
+                            <span class="text-sm font-medium text-gray-700">/month</span>
+                        <p class="card-price-monthly" id="card1Price">(paid monthly)</p>
+                        </p>
+                        <a class="mt-4 block rounded border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 sm:mt-6"
+                            href="/form.html" id="getStart3Link">Get Started</a>
                     </li>
                 </ul>
             </div>
@@ -1134,11 +1135,11 @@
                         </tbody>
                     </table>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <!-- code for table ends -->
 
@@ -1184,6 +1185,29 @@
         let annualBasePrice3 = monthlyBasePrice3 * 12 * 0.8; // 20% discount
 
 
+
+        // Assuming these are the ids of your compare section elements
+        let compareTotalPrice1 = document.getElementById('compareTotalPrice1');
+        let compareTotalPrice2 = document.getElementById('compareTotalPrice2');
+        let compareTotalPrice3 = document.getElementById('compareTotalPrice3');
+
+        // Function to update compare section
+        function updateCompareSection() {
+            compareTotalPrice1.textContent = totalPrice1.textContent;
+            compareTotalPrice2.textContent = totalPrice2.textContent;
+            compareTotalPrice3.textContent = totalPrice3.textContent;
+        }
+
+        // Create a new MutationObserver instance
+        let observer = new MutationObserver(updateCompareSection);
+
+        // Options for the observer (which mutations to observe)
+        let config = { attributes: true, childList: true, subtree: true };
+
+        // Start observing the target nodes with the configured parameters
+        observer.observe(totalPrice1, config);
+        observer.observe(totalPrice2, config);
+        observer.observe(totalPrice3, config);
         let card1Price = document.querySelectorAll('.card-price-monthly');
         var addOnsObj = {
             'add-on-auto': 0,
@@ -1378,7 +1402,7 @@
 
         const start1Link = document.getElementById('start1Link');
 
-        start1Link.addEventListener('click', function(e) {
+        start1Link.addEventListener('click', function (e) {
             e.preventDefault();
             console.log('addOnsObj', addOnsObj);
             console.log('basePrice1', basePrice1.textContent);
@@ -1403,7 +1427,7 @@
 
         const start2Link = document.getElementById('start2Link');
 
-        start2Link.addEventListener('click', function(e) {
+        start2Link.addEventListener('click', function (e) {
             e.preventDefault();
             console.log('addOnsObj', addOnsObj);
             console.log('basePrice2', basePrice2.textContent);
@@ -1424,7 +1448,7 @@
 
         const start3Link = document.getElementById('start3Link');
 
-        start3Link.addEventListener('click', function(e) {
+        start3Link.addEventListener('click', function (e) {
             e.preventDefault();
             console.log('addOnsObj', addOnsObj);
             console.log('basePrice3', basePrice3.textContent);
@@ -1442,6 +1466,28 @@
 
             window.location.href = start3Link.href;
         })
+
+        let getStart1Link = document.getElementById('getStart1Link');
+        let getStart2Link = document.getElementById('getStart2Link');
+        let getStart3Link = document.getElementById('getStart3Link');
+
+        getStart1Link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default action
+            start1Link.click(); // Trigger click event on start1Link
+        });
+
+        getStart2Link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default action
+            start2Link.click(); // Trigger click event on start2Link
+        });
+
+        getStart3Link.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default action
+            start3Link.click(); // Trigger click event on start3Link
+        });
+
+
+
 
 
 
