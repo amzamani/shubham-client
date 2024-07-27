@@ -1,0 +1,653 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+ </head>
+ <body>
+  <form action="https://api.web3forms.com/submit" method="POST">
+
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value="c9a84ed4-e52e-4bc6-9ec0-5fda21355ce9">
+
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+    <input type="text" name="name" required>
+    <input type="email" name="email" required>
+    <textarea name="message" required></textarea>
+
+    <!-- Honeypot Spam Protection -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+    <!-- Custom Confirmation / Success Page -->
+    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+    <button type="submit">Submit Form</button>
+
+</form>
+
+
+<section class="py-24">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mb-12 text-center">
+      <h2
+        class="font-manrope text-5xl text-center font-bold text-gray-900 mb-4"
+      >
+        Our pricing plans
+      </h2>
+      <p class="text-gray-500 text-xl text-center leading-6 mb-12">
+        7 Days free trial. No credit card required.
+      </p>
+      <div class="mb-10 flex justify-center">
+        <span class="flex items-center">
+          <svg
+            class="w-16 h-11"
+            viewBox="0 0 65 43"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M42.0964 4.02732C39.5251 4.74637 37.1135 5.87152 34.9795 7.36979C34.0529 8.02188 33.2561 8.68389 32.5982 9.38799C32.5386 9.38153 32.482 9.38579 32.4118 9.38233C30.1332 9.37225 27.711 10.2114 25.0194 11.9465C20.4292 14.906 16.7212 19.2023 14.2904 24.3897C12.0636 29.1502 11.0911 34.265 11.4596 39.2591L7.6368 36.04L6.83225 37.0047L12.587 41.8449L16.9956 35.7576L15.9819 35.024L13.1146 38.9812C12.4253 28.9566 17.4523 18.8014 25.9225 13.3583C27.861 12.1112 29.6087 11.3798 31.2299 11.146C30.6487 12.083 30.2872 13.0624 30.1426 14.0738C29.9087 15.7573 30.5083 17.6123 31.7101 18.8943C32.6977 19.9474 33.9541 20.4744 35.2551 20.3764C36.5669 20.2755 37.7738 19.5103 38.5629 18.2841C39.4661 16.8873 39.6838 15.1043 39.1492 13.6472C38.4686 11.7917 36.7603 10.3508 34.6701 9.73325C35.0524 9.40674 35.4806 9.07896 35.9331 8.75591C42.0235 4.51004 50.3771 3.60724 57.2293 6.46459L57.8719 4.92101C54.237 3.40628 50.175 2.84314 46.1137 3.2738C44.7513 3.40049 43.4035 3.6618 42.0964 4.02732ZM37.5828 14.2008C37.9503 15.1845 37.7787 16.3883 37.1605 17.3586C36.9123 17.7517 36.3954 18.3817 35.5811 18.6094C35.4419 18.6483 35.2889 18.6795 35.1406 18.6863C34.3594 18.743 33.5726 18.4082 32.933 17.7318C32.0791 16.8263 31.6418 15.4691 31.8087 14.2898C31.9645 13.1944 32.4639 12.1301 33.2993 11.1106C35.286 11.3987 36.9819 12.5889 37.5828 14.2008Z"
+              fill="#9CA3AF"
+            />
+          </svg>
+
+          <span
+            class="inline-block whitespace-nowrap text-xs leading-4 font-semibold tracking-wide bg-indigo-50 text-indigo-600 rounded-full py-2 px-4"
+            >Save 20%</span
+          >
+        </span>
+      </div>
+      <!--Switch-->
+      <div class="tabs">
+        <div
+          class="flex justify-center items-center bg-gray-100 rounded-full p-1.5 max-w-sm mx-auto"
+        >
+          <a
+            href="javascript:void(0)"
+            class="inline-block w-1/2 text-center transition-all duration-500 rounded-full text-gray-400 font-semibold py-3 px-3 lg:px-11 hover:text-indigo-600 tab-active:bg-indigo-600 tab-active:rounded-full tab-active:text-white tablink whitespace-nowrap active"
+            data-tab="tabs-with-background-1"
+            role="tab"
+          >
+            Bill Yearly
+          </a>
+          <a
+            href="javascript:void(0)"
+            class="inline-block w-1/2 text-center transition-all duration-500 rounded-full text-gray-400 font-semibold py-3 px-3 lg:px-11 hover:text-indigo-600 tab-active:bg-indigo-600 tab-active:rounded-full tab-active:text-white tablink whitespace-nowrap"
+            data-tab="tabs-with-background-2"
+            role="tab"
+          >
+            Bill Monthly
+          </a>
+        </div>
+
+        <div
+          id="tabs-with-background-1"
+          role="tabpanel"
+          aria-labelledby="tabs-with-background-item-1"
+          class="tabcontent mt-12"
+          
+        >
+          <div
+            class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-8 lg:space-y-0"
+          >
+            <!--Pricing Card-->
+            <div
+              class="group relative flex flex-col mx-auto w-full max-w-sm text-gray-900 rounded-2xl border border-solid border-gray-300 text-center transition-all duration-300 p-6 xl:p-12 hover:border-indigo-600"
+            >
+              <h3 class="font-manrope text-2xl font-bold mb-6">Free</h3>
+              <div class="mb-20 flex flex-col">
+                <span class="font-manrope text-6xl font-semibold mb-2"
+                  >$0</span
+                >
+                <span class="text-xl text-gray-400">Lifetime</span>
+              </div>
+              <a
+                href="javascript:;"
+                class="py-2.5 px-5 bg-indigo-50 shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto group-hover:bg-indigo-600 group-hover:text-white"
+                >Purchase Plan</a
+              >
+              <!--List End-->
+            </div>
+            <!--Pricing Card-->
+            <div
+              class="group relative flex flex-col mx-auto w-full max-w-sm text-gray-900 rounded-2xl border border-solid border-gray-300 text-center transition-all duration-500 p-6 xl:p-12 bg-gradient-to-r from-indigo-600 to-violet-600 hover:before:opacity-100 before:contents[' '] before:absolute before:bg-indigo-800 before:w-full before:h-full before:top-0 before:left-0 before:rounded-2xl before:opacity-0 before:transition-all before:duration-500 before:z-0"
+            >
+              <h3
+                class="relative flex items-center justify-center font-manrope text-2xl font-bold mb-6 text-white"
+              >
+                Advanced
+                <span
+                  class="h-6 px-3 relative rounded-full border border-solid border-gray-100 text-sm ml-4"
+                  >Popular</span
+                >
+              </h3>
+              <div class="mb-20 flex flex-col relative">
+                <span
+                  class="font-manrope text-6xl font-semibold mb-2 text-white"
+                  >$150</span
+                >
+                <span class="text-xl text-gray-300">Per year</span>
+              </div>
+              <a
+                href="javascript:;"
+                class="relative py-2.5 px-5 bg-white shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto"
+                >Purchase Plan</a
+              >
+              <!--List End-->
+            </div>
+            <!--Pricing Card-->
+            <div
+              class="group relative flex flex-col mx-auto w-full max-w-sm text-gray-900 rounded-2xl border border-solid border-gray-300 text-center transition-all duration-300 p-8 xl:p-12 hover:border-indigo-600"
+            >
+              <h3 class="font-manrope text-2xl font-bold mb-6">Team</h3>
+              <div class="mb-20 flex flex-col">
+                <span class="font-manrope text-6xl font-semibold mb-2"
+                  >$180</span
+                >
+                <span class="text-xl text-gray-400">Per year</span>
+              </div>
+              <a
+                href="javascript:;"
+                class="py-2.5 px-5 bg-indigo-50 shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto group-hover:bg-indigo-600 group-hover:text-white"
+                >Purchase Plan</a
+              >
+              <!--List End-->
+            </div>
+          </div>
+        </div>
+        <div
+          id="tabs-with-background-2"
+          class="tabcontent mt-12"
+          role="tabpanel"
+          aria-labelledby="tabs-with-background-item-2"
+          style="display: none"
+        >
+          <div
+            class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-8 lg:space-y-0"
+          >
+            <!--Pricing Card-->
+            <div
+              class="group relative flex flex-col mx-auto w-full max-w-sm text-gray-900 rounded-2xl border border-solid border-gray-300 text-center transition-all duration-300 p-6 xl:p-12 hover:border-indigo-600"
+            >
+              <h3 class="font-manrope text-2xl font-bold mb-6">Free</h3>
+              <div class="mb-20 flex flex-col">
+                <span class="font-manrope text-6xl font-semibold mb-2"
+                  >$0</span
+                >
+                <span class="text-xl text-gray-400">Lifetime</span>
+              </div>
+              <a
+                href="javascript:;"
+                class="py-2.5 px-5 bg-indigo-50 shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto group-hover:bg-indigo-600 group-hover:text-white"
+                >Purchase Plan</a
+              >
+              <!--List End-->
+            </div>
+            <!--Pricing Card-->
+            <div
+              class="group relative flex flex-col mx-auto w-full max-w-sm text-gray-900 rounded-2xl border border-solid border-gray-300 text-center transition-all duration-500 p-6 xl:p-12 bg-gradient-to-r from-indigo-600 to-violet-600 hover:before:opacity-100 before:contents[' '] before:absolute before:bg-indigo-800 before:w-full before:h-full before:top-0 before:left-0 before:rounded-2xl before:opacity-0 before:transition-all before:duration-500 before:z-0"
+            >
+              <h3
+                class="relative flex items-center justify-center font-manrope text-2xl font-bold mb-6 text-white"
+              >
+                Advanced
+                <span
+                  class="h-6 px-3 relative rounded-full border border-solid border-gray-100 text-sm ml-4"
+                  >Popular</span
+                >
+              </h3>
+              <div class="mb-20 flex flex-col relative">
+                <span
+                  class="font-manrope text-6xl font-semibold mb-2 text-white"
+                  >$39</span
+                >
+                <span class="text-xl text-gray-300">Per Month</span>
+              </div>
+              <a
+                href="javascript:;"
+                class="relative py-2.5 px-5 bg-white shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto"
+                >Purchase Plan</a
+              >
+              <!--List End-->
+            </div>
+            <!--Pricing Card-->
+            <div
+              class="group relative flex flex-col mx-auto w-full max-w-sm text-gray-900 rounded-2xl border border-solid border-gray-300 text-center transition-all duration-300 p-8 xl:p-12 hover:border-indigo-600"
+            >
+              <h3 class="font-manrope text-2xl font-bold mb-6">Team</h3>
+              <div class="mb-20 flex flex-col">
+                <span class="font-manrope text-6xl font-semibold mb-2"
+                  >$49</span
+                >
+                <span class="text-xl text-gray-400">Per Month</span>
+              </div>
+              <a
+                href="javascript:;"
+                class="py-2.5 px-5 bg-indigo-50 shadow-sm rounded-full transition-all duration-500 text-base text-indigo-600 font-semibold text-center w-fit mx-auto group-hover:bg-indigo-600 group-hover:text-white"
+                >Purchase Plan</a
+              >
+              <!--List End-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Switch End-->
+    </div>
+  </div>
+</section>
+<div x-data="pricingComponent()">
+  <section class="py-14 text-gray-600">
+    <div
+      class="relative max-w-xl mx-auto space-y-3 px-4 sm:text-center md:px-0"
+    >
+      <h3 class="text-indigo-600 font-semibold">Pricing</h3>
+      <p class="text-gray-800 text-3xl font-semibold sm:text-4xl">
+        Compare our plans and find yours
+      </p>
+      <div class="max-w-xl">
+        <p>
+          
+        </p>
+      </div>
+    </div>
+    <div class="mt-16">
+      <div class="sticky top-0 py-6 border-b bg-white">
+        <div class="max-w-screen-xl mx-auto">
+          <ul class="ml-auto flex gap-x-6 px-4 md:px-8 lg:max-w-3xl">
+            <template x-for="plan in plans" :key="plan.name">
+              <li
+                :class="{'space-y-4 w-full': true, 'hidden lg:block': selectedPlan !== plan.name}"
+              >
+                <div class="flex items-center justify-between">
+                  <span
+                    class="text-gray-700 font-medium"
+                    x-text="plan.name"
+                  ></span>
+                  <div
+                    class="relative text-gray-500 hover:text-gray-800 lg:hidden"
+                  >
+                    <!-- Dropdown for small devices -->
+                    <svg
+                      class="w-5 h-5 absolute right-0 inset-y-0 my-auto"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <select
+                      class="bg-transparent appearance-none outline-none px-8 cursor-pointer"
+                      x-model="selectedPlan"
+                    >
+                      <option disabled>Switch plan</option>
+                      <template x-for="option in plans" :key="option.name">
+                        <option
+                          x-bind:value="option.name"
+                          x-text="option.name"
+                        ></option>
+                      </template>
+                    </select>
+                  </div>
+                </div>
+                <div class="text-gray-800 text-3xl font-semibold">
+                  <span x-text="`$${plan.price}`"></span>
+                  <span class="text-xl text-gray-600 font-normal">/mo</span>
+                </div>
+                <p class="text-sm" x-text="plan.desc"></p>
+                <button
+                  class="px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700"
+                >
+                  Get Started
+                </button>
+              </li>
+            </template>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-screen-xl mx-auto mt-10 space-y-4 px-4 overflow-auto md:overflow-visible md:px-8"
+      >
+        <template x-for="table in tables" :key="table.label">
+          <table class="w-full table-auto text-sm text-left">
+            <thead class="text-gray-600 font-medium border-b">
+              <tr>
+                <th class="z-20 top-12 py-6 ">
+                  <div class="flex items-center gap-x-3">
+                    
+                    <h4
+                      class="text-gray-800 text-xl font-medium"
+                      x-text="table.label"
+                    ></h4>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-600 divide-y">
+              <template x-for="(item, idx) in table.items" :key="idx">
+                <tr>
+                  <td
+                    class="px-6 py-4 whitespace-nowrap"
+                    x-text="item.name"
+                  ></td>
+                  <td
+                    class="text-center w-[250px] px-6 py-4 whitespace-nowrap hidden lg:table-cell"
+                    x-html="item.basic"
+                  ></td>
+                  <td
+                    class="text-center w-[250px] px-6 py-4 whitespace-nowrap hidden lg:table-cell"
+                    x-html="item.business"
+                  ></td>
+                  <td
+                    class="text-center w-[250px] px-6 py-4 whitespace-nowrap hidden lg:table-cell"
+                    x-html="item.enterprise"
+                  ></td>
+                  <td
+                    class="text-center w-[250px] px-6 py-4 whitespace-nowrap lg:hidden"
+                    x-html="item[selectedPlan.toLowerCase()]"
+                  ></td>
+                </tr>
+              </template>
+            </tbody>
+          </table>
+        </template>
+      </div>
+    </div>
+  </section>
+</div>
+<script>
+    
+
+    const monthlyBtn = document.getElementById('monthlyBtn');
+    const annuallyBtn = document.getElementById('annuallyBtn');
+    const basePrice = document.getElementById('basePrice');
+    const addOnToggles = document.querySelectorAll('.add-on-toggle input');
+    const addOns = document.querySelectorAll('.add-on');
+    const viewFeaturesBtns = document.querySelectorAll('.view-features-btn');
+
+
+    const getStartedBtn = document.querySelector('.get-started-btn');
+    const dialogBox = document.getElementById('dialogBox');
+    const dialogPrice = document.getElementById('dialogPrice');
+    const dialogForm = document.getElementById('dialogForm');
+    let isMonthly = true;
+    const monthlyBasePrice = 10;
+    const annualBasePrice = monthlyBasePrice * 12 * 0.8; // 20% discount
+
+    // Get the checkbox element
+    const addOn1Toggle = document.getElementById('addOn1Toggle');
+
+    // Get the other add-on elements
+    const addOn2Toggle = document.querySelector('.add-ons-container .add-on-toggle:nth-child(2)');
+    const addOn3Toggle = document.querySelector('.add-ons-container .add-on-toggle:nth-child(3)');
+    const addOn4Toggle = document.querySelector('.add-ons-container .add-on-toggle:nth-child(4)');
+
+    // Add event listener to the checkbox
+    addOn1Toggle.addEventListener('change', function () {
+        // If the checkbox is checked, remove the 'hidden' class from the other add-ons
+        if (this.checked) {
+            addOn2Toggle.classList.remove('hidden');
+            addOn3Toggle.classList.remove('hidden');
+            addOn4Toggle.classList.remove('hidden');
+        } else {
+            // If the checkbox is unchecked, add the 'hidden' class back to the other add-ons
+            addOn2Toggle.classList.add('hidden');
+            addOn3Toggle.classList.add('hidden');
+            addOn4Toggle.classList.add('hidden');
+        }
+    });
+
+
+    function updatePrices() {
+        basePrice.textContent = isMonthly ? monthlyBasePrice : (annualBasePrice / 12).toFixed(2);
+    }
+
+    monthlyBtn.addEventListener('click', () => {
+        isMonthly = true;
+        monthlyBtn.classList.add('active');
+        annuallyBtn.classList.remove('active');
+        updatePrices();
+    });
+
+    annuallyBtn.addEventListener('click', () => {
+        isMonthly = false;
+        annuallyBtn.classList.add('active');
+        monthlyBtn.classList.remove('active');
+        updatePrices();
+    });
+
+    addOnToggles.forEach((toggle, index) => {
+        toggle.addEventListener('change', () => {
+            addOns[index].classList.toggle('active', toggle.checked);
+        });
+    });
+    viewFeaturesBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            featuresTable.classList.toggle('hidden');
+        });
+    });
+
+    updatePrices();
+    // Define the prices for each add-on
+    const addOnPrices = [10, 5, 5, 5]; // Replace these values with your actual prices
+
+    // Get the base price and "Get Started" button elements
+
+    // const getStartedBtn = document.querySelector('.get-started-btn');
+
+    // Get the "View All Features" button element
+    const viewFeaturesBtn = document.querySelector('.view-features-btn');
+
+    // Get the add-on toggle elements
+    const addOnToggles1 = [
+        document.getElementById('addOn1Toggle'),
+        document.getElementById('addOn2Toggle'),
+        document.getElementById('addOn3Toggle'),
+        document.getElementById('addOn4Toggle')
+    ];
+
+    // Create a new HTML element to display the updated price
+    const updatedPrice = document.createElement('p');
+    updatedPrice.id = 'updatedPrice';
+    updatedPrice.textContent = '$10/month'; // Set the initial text to the base price
+    updatedPrice.style.display = 'none'; // Hide the updated price element initially
+
+    // Insert the updated price element above the "View All Features" button
+    viewFeaturesBtn.parentNode.insertBefore(updatedPrice, viewFeaturesBtn);
+
+    // Add event listener to each add-on toggle
+    addOnToggles1.forEach((toggle, index) => {
+        toggle.addEventListener('change', function () {
+            // If the toggle is checked, add the price of the add-on to the updated price
+            if (this.checked) {
+                updatedPrice.textContent = '$' + (parseInt(updatedPrice.textContent.slice(1, -6)) + addOnPrices[index]) + '/month';
+                updatedPrice.style.display = 'block'; // Show the updated price element
+                basePrice.style.color = 'grey'; // Change the color of the base price to grey
+                getStartedBtn.style.backgroundColor = 'grey'; // Change the color of the "Get Started" button to grey
+            } else {
+                // If the toggle is unchecked, subtract the price of the add-on from the updated price
+                updatedPrice.textContent = '$' + (parseInt(updatedPrice.textContent.slice(1, -6)) - addOnPrices[index]) + '/month';
+                // If the updated price is equal to the base price, hide the updated price element and change the color of the base price and "Get Started" button back to the original color
+                if (parseInt(updatedPrice.textContent.slice(1, -6)) === 10) {
+                    updatedPrice.style.display = 'none';
+                    basePrice.style.color = '';
+                    getStartedBtn.style.backgroundColor = '';
+                }
+            }
+        });
+    });
+
+    // reditect to form page
+    getStartedBtn.addEventListener('click', function () {
+        var updatedPriceNew = updatedPrice.textContent  // replace this with your function to calculate the updated price
+        window.location.href = "/form.html?price=" + updatedPriceNew;
+    });
+    const inventoryToggle = document.getElementById('addOn4Toggle');
+    const productSelection = document.getElementById('productSelection');
+    const productSize = document.getElementById('productSize');
+    const productPrice = document.getElementById('productPrice');
+
+    inventoryToggle.addEventListener('change', function () {
+        if (inventoryToggle.checked) {
+            productSelection.classList.remove('hidden');
+        } else {
+            productSelection.classList.add('hidden');
+            productPrice.textContent = ''; // Clear price if toggled off
+        }
+    });
+
+    productSize.addEventListener('change', function () {
+        const price = productSize.value;
+        if (price === 'call') {
+            productPrice.textContent = 'Please get a call for pricing.';
+        } else if (price) {
+            productPrice.textContent = `Selected product price is $${price}.`;
+        } else {
+            productPrice.textContent = ''; // Clear price if no selection
+        }
+    });
+
+</script>
+<script>
+  function pricingComponent() {
+    return {
+      checkIcon: "<div class='text-indigo-600 text-xl'>+</div>",
+      "<div class='text-xl'>-</div>": "<div class='text-xl'>-</div>",
+      plans: [
+        {
+          name: "Loyalty",
+          desc: "",
+          price: "10",
+        },
+        {
+          name: "Workforce Management",
+          desc: "",
+          price: "15",
+        },
+        {
+          name: "Loyalty and Workforce Management",
+          desc: "",
+          price: "25",
+        },
+      ],
+      tables: [
+        {
+          label: "Features",
+          label_icon:
+            'A',
+          items: [
+            {
+              name: "Aliquam finibus",
+              basic: "<div class='text-indigo-600 text-xl'>+</div>",
+              business: "<div class='text-indigo-600 text-xl'>+</div>",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Vestibulum tristique",
+              basic: "<div class='text-xl'>-</div>",
+              business: "<div class='text-indigo-600 text-xl'>+</div>",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Aliquam finibus",
+              basic: "<div class='text-xl'>-</div>",
+              business: "<div class='text-xl'>-</div>",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Praesent aliquet",
+              basic: "<div class='text-xl'>-</div>",
+              business: "150GB",
+              enterprise: "Unlimited",
+            },
+          ],
+        },
+        {
+          label: "Analytics",
+          label_icon:
+            '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>',
+          items: [
+            {
+              name: "Aliquam finibus",
+              basic: "<div class='text-indigo-600 text-xl'>+</div>",
+              business: "<div class='text-indigo-600 text-xl'>+</div>",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Vestibulum tristique",
+              basic: "<div class='text-xl'>-</div>",
+              business: "<div class='text-indigo-600 text-xl'>+</div>",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Aliquam finibus",
+              basic: "<div class='text-xl'>-</div>",
+              business: "<div class='text-xl'>-</div>",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Lorinto dinor",
+              basic: "30",
+              business: "60",
+              enterprise: "Custom",
+            },
+            {
+              name: "Praesent aliquet",
+              basic: "Limited",
+              business: "Limited",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Praesent aliquet",
+              basic: "<div class='text-xl'>-</div>",
+              business: "150GB",
+              enterprise: "Unlimited",
+            },
+          ],
+        },
+        {
+          label: "Support",
+          label_icon:
+            '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" class="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" /></svg>',
+          items: [
+            {
+              name: "Aliquam finibus",
+              basic: "<div class='text-indigo-600 text-xl'>+</div>",
+              business: "<div class='text-indigo-600 text-xl'>+</div>",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Vestibulum tristique",
+              basic: "<div class='text-xl'>-</div>",
+              business: "<div class='text-indigo-600 text-xl'>+</div>",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Aliquam finibus",
+              basic: "<div class='text-xl'>-</div>",
+              business: "<div class='text-xl'>-</div>",
+              enterprise: "<div class='text-indigo-600 text-xl'>+</div>",
+            },
+            {
+              name: "Praesent aliquet",
+              basic: "<div class='text-xl'>-</div>",
+              business: "150GB",
+              enterprise: "Unlimited",
+            },
+          ],
+        },
+      ],
+      selectedPlan: "Basic",
+    };
+  }
+</script>
+ </body>
+ </html>
+ 
+ 

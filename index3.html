@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+
+
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 2vh auto;
+
+            padding: 20px;
+            border-radius: 8px;
+
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .toggle-btn {
+            padding: 10px 20px;
+            border: none;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .toggle-btn.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .price {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .get-started-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+
+        /* .add-on {
+            color: #888;
+            margin: 5px 0;
+        } */
+
+        .add-on.active {
+            color: #333;
+        }
+
+
+
+
+
+        .hidden {
+            display: none;
+        }
+
+        sup {
+            background-color: #2196F3;
+            border-radius: 20px;
+            color: #333;
+            font-size: xx-small;
+            font-weight: bold;
+            margin: 0.2rem;
+            padding: 0.2rem 0.3rem;
+            position: relative;
+            top: -2px;
+        }
+
+        .flip-vertical {
+            transform: scaleY(-1);
+
+        }
+
+        .ml4 {
+            margin-left: 20rem;
+            /* Adjust as needed for more spacing */
+        }
+
+        .add-ons-container {
+            width: 100%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .flex-grow {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="container">
+        <div class='relative max-w-xl mx-auto sm:text-center'>
+            <h3 class='text-gray-800 text-3xl font-semibold sm:text-4xl'>
+                Pricing Table
+            </h3>
+            <div class='mt-3 max-w-xl'>
+                <p>
+
+                    An Exceptional Service, At The Right Price
+                </p>
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+
+        <div class=" flex items-center justify-center text-gray-900">
+            <div class="inline-flex items-center justify-center rounded-full border font-semibold bg-slate-100 p-2">
+                <button
+                    class="inline-flex cursor-pointer items-center justify-center rounded-full py-1 px-5 text-center font-sans text-sm normal-case toggle-btn active"
+                    id="monthlyBtn">Monthly
+
+                </button>
+
+                <button
+                    class="inline-flex cursor-pointer items-center justify-center rounded-full py-1 px-5 text-center font-sans text-sm normal-case toggle-btn"
+                    id="annuallyBtn">Annually
+
+                </button>
+
+
+            </div>
+
+        </div>
+        <div class="mb-10 flex justify-center">
+
+            <span class="flex items-center">
+
+
+
+                <svg class="w-16 h-11 ml4 flip-vertical" viewBox="0 0 65 43" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M42.0964 4.02732C39.5251 4.74637 37.1135 5.87152 34.9795 7.36979C34.0529 8.02188 33.2561 8.68389 32.5982 9.38799C32.5386 9.38153 32.482 9.38579 32.4118 9.38233C30.1332 9.37225 27.711 10.2114 25.0194 11.9465C20.4292 14.906 16.7212 19.2023 14.2904 24.3897C12.0636 29.1502 11.0911 34.265 11.4596 39.2591L7.6368 36.04L6.83225 37.0047L12.587 41.8449L16.9956 35.7576L15.9819 35.024L13.1146 38.9812C12.4253 28.9566 17.4523 18.8014 25.9225 13.3583C27.861 12.1112 29.6087 11.3798 31.2299 11.146C30.6487 12.083 30.2872 13.0624 30.1426 14.0738C29.9087 15.7573 30.5083 17.6123 31.7101 18.8943C32.6977 19.9474 33.9541 20.4744 35.2551 20.3764C36.5669 20.2755 37.7738 19.5103 38.5629 18.2841C39.4661 16.8873 39.6838 15.1043 39.1492 13.6472C38.4686 11.7917 36.7603 10.3508 34.6701 9.73325C35.0524 9.40674 35.4806 9.07896 35.9331 8.75591C42.0235 4.51004 50.3771 3.60724 57.2293 6.46459L57.8719 4.92101C54.237 3.40628 50.175 2.84314 46.1137 3.2738C44.7513 3.40049 43.4035 3.6618 42.0964 4.02732ZM37.5828 14.2008C37.9503 15.1845 37.7787 16.3883 37.1605 17.3586C36.9123 17.7517 36.3954 18.3817 35.5811 18.6094C35.4419 18.6483 35.2889 18.6795 35.1406 18.6863C34.3594 18.743 33.5726 18.4082 32.933 17.7318C32.0791 16.8263 31.6418 15.4691 31.8087 14.2898C31.9645 13.1944 32.4639 12.1301 33.2993 11.1106C35.286 11.3987 36.9819 12.5889 37.5828 14.2008Z"
+                        fill="#9CA3AF" />
+                </svg>
+                <span
+                    class="inline-block whitespace-nowrap text-xs leading-4 font-semibold tracking-wide bg-indigo-50 text-indigo-600 rounded-full py-2 px-4">Save
+                    20%</span>
+            </span>
+        </div>
+
+
+
+
+
+
+        <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 m-2 add-ons-container mx-auto my-auto"
+            style="margin-bottom: 2vh;">
+            <div class="flex items-center space-x-4 ">
+                <label class="relative inline-block w-16 h-9">
+                    <input type="checkbox" class="opacity-0 w-0 h-0 peer" id="addOn1Toggle">
+                    <span
+                        class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 transition-all duration-400 rounded-full peer-checked:bg-blue-600"></span>
+                    <span
+                        class="absolute content-[''] h-7 w-7 left-1 bottom-1 bg-white transition-all duration-400 rounded-full peer-checked:transform peer-checked:translate-x-7"></span>
+                </label>
+                <span>We use LightSpeed as Point of Sale (POS)? </span>
+            </div>
+            <div class="flex items-center space-x-4 add-on-toggle hidden">
+                <label class="relative inline-block w-16 h-9">
+                    <input type="checkbox" class="opacity-0 w-0 h-0 peer" id="addOn2Toggle">
+                    <span
+                        class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 transition-all duration-400 rounded-full peer-checked:bg-blue-600"></span>
+                    <span
+                        class="absolute content-[''] h-7 w-7 left-1 bottom-1 bg-white transition-all duration-400 rounded-full peer-checked:transform peer-checked:translate-x-7"></span>
+                </label>
+                <span>Would like to utilize auto scheduling feature?</span>
+            </div>
+            <div class="flex items-center space-x-4 add-on-toggle hidden">
+                <label class="relative inline-block w-16 h-9">
+                    <input type="checkbox" class="opacity-0 w-0 h-0 peer" id="addOn3Toggle">
+                    <span
+                        class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 transition-all duration-400 rounded-full peer-checked:bg-blue-600"></span>
+                    <span
+                        class="absolute content-[''] h-7 w-7 left-1 bottom-1 bg-white transition-all duration-400 rounded-full peer-checked:transform peer-checked:translate-x-7"></span>
+                </label>
+                <span>Would like send SMS/Email to our customers?</span>
+            </div>
+            <div class="flex items-center space-x-4 add-on-toggle hidden">
+                <label class="relative inline-block w-16 h-9">
+                    <input type="checkbox" class="opacity-0 w-0 h-0 peer" id="addOn4Toggle">
+                    <span
+                        class="absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-gray-300 transition-all duration-400 rounded-full peer-checked:bg-blue-600"></span>
+                    <span
+                        class="absolute content-[''] h-7 w-7 left-1 bottom-1 bg-white transition-all duration-400 rounded-full peer-checked:transform peer-checked:translate-x-7"></span>
+                </label>
+                <span>Would like to utilize the inventory management feature?</span>
+            </div>
+        </div>
+
+
+
+
+        <div id="productSelection"
+            class="hidden w-1/2 md:w-1/4 h-1/2 mt-4 p-4 border border-gray-300 rounded-md bg-white mx-auto my-auto "
+            style="margin-bottom: 1vh; margin-top: 1vh;">
+            <label for="productSize" class="block text-sm font-medium text-gray-700">Let us know your product
+                size</label>
+            <select id="productSize"
+                class="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                <option value="5">($5) - 1 to 500</option>
+                <option value="10">($10) - 501 to 1000</option>
+                <option value="15">($15) - 1001 to 2000</option>
+                <option value="20">($20) - 2001 to 3000</option>
+                <option value="call for custom price of ">Get a Call - 3000+</option>
+            </select>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="pricing-option max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-stretch md:grid-cols-3 md:gap-8">
+                <!-- Card 1 -->
+                <div class="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-sm flex flex-col">
+                    <div class="p-6 sm:px-8">
+                        <h2 class="text-lg font-medium text-gray-900">Loyalty <span class="sr-only">Plan</span></h2>
+                        <p class="mt-2 text-gray-700">Ideal for single-location restaurants who need 1-2 terminals to
+                            get up and running.</p>
+                    </div>
+                    <div class="p-6 sm:px-8 flex-grow">
+                        <p class="text-lg font-medium text-gray-900 sm:text-xl">Base Price</p>
+                        <ul class="mt-2 space-y-2 sm:mt-4 mb-1">
+                            <li class="flex items-center gap-1">
+                                <p>$<span id="basePrice1" class="text-gray-700">10</span>/month</p>
+
+                            </li>
+                        </ul>
+                        <p class="text-lg font-medium text-gray-900 sm:text-xl">Add Ons :</p>
+                        <ul class="mt-2 space-y-2 sm:mt-4">
+                            <li class="flex items-center gap-1">
+                                <span class="add-on-sms" style="color: #888;">+$10 SMS/Email</span>
+                            </li>
+                            <li class="flex items-center gap-1">
+                                <span class="add-on-inv" style="color: #888;">+$5 Inventory Management</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 sm:px-8">
+                        <p class="mt-2 sm:mt-4">
+                            <strong class="text-3xl font-bold text-gray-900 sm:text-4xl">$<span
+                                    id="totalPrice1">10</span> </strong>
+                            <span class="text-sm font-medium text-gray-700">/month</span>
+                        <p class="card-price-monthly" id="card1Price">(paid monthly)</p>
+                        </p>
+                        <a class="mt-4 block rounded border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 sm:mt-6"
+                            href="#">Get Started</a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-sm flex flex-col">
+                    <div class="p-6 sm:px-8">
+                        <h2 class="text-lg font-medium text-gray-900">Workforce Management <span
+                                class="sr-only">Plan</span></h2>
+                        <p class="mt-2 text-gray-700">Ideal for single-location restaurants who need 1-2 terminals to
+                            get up and running.</p>
+                    </div>
+                    <div class="p-6 sm:px-8 flex-grow">
+                        <p class="text-lg font-medium text-gray-900 sm:text-xl">Base Price</p>
+                        <ul class="mt-2 space-y-2 sm:mt-4 mb-1">
+                            <li class="flex items-center gap-1">
+                                <p>$<span id="basePrice2" class="text-gray-700">15</span>/month</p>
+                            </li>
+                        </ul>
+                        <p class="text-lg font-medium text-gray-900 sm:text-xl">Add Ons :</p>
+                        <ul class="mt-2 space-y-2 sm:mt-4">
+                            <li class="flex items-center gap-1">
+                                <span class="add-on-auto" style="color: #888;">+$5 Auto Scheduling</span>
+                            </li>
+                            <li class="flex items-center gap-1">
+                                <span class="add-on-inv" style="color: #888;">+$5 Inventory Management</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 sm:px-8">
+                        <p class="mt-2 sm:mt-4">
+                            <strong class="text-3xl font-bold text-gray-900 sm:text-4xl">$<span
+                                    id="totalPrice2">15</span> </strong>
+                            <span class="text-sm font-medium text-gray-700">/month</span>
+                        <p class="card-price-monthly" id="card1Price">(paid monthly)</p>
+                        </p>
+                        <a class="mt-4 block rounded border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 sm:mt-6"
+                            href="#">Get Started</a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="divide-y divide-gray-200 rounded-2xl border border-gray-200 shadow-sm flex flex-col">
+                    <div class="p-6 sm:px-8">
+                        <h2 class="text-lg font-medium text-gray-900">Loyalty and Workforce Management <span
+                                class="sr-only">Plan</span></h2>
+                        <p class="mt-2 text-gray-700">Ideal for single-location restaurants who need 1-2 terminals to
+                            get up and running.</p>
+                    </div>
+                    <div class="p-6 sm:px-8 flex-grow">
+                        <p class="text-lg font-medium text-gray-900 sm:text-xl">Base Price</p>
+                        <ul class="mt-2 space-y-2 sm:mt-4 mb-1">
+                            <li class="flex items-center gap-1">
+                                <p>$<span id="basePrice3" class="text-gray-700">25</span>/month</p>
+                            </li>
+                        </ul>
+                        <p class="text-lg font-medium text-gray-900 sm:text-xl">Add Ons :</p>
+                        <ul class="mt-2 space-y-2 sm:mt-4">
+                            <li class="flex items-center gap-1">
+                                <span class="add-on-sms" style="color: #888;">+$10 SMS/Email</span>
+                            </li>
+                            <li class="flex items-center gap-1">
+                                <span class="add-on-auto" style="color: #888;">+$5 Auto Scheduling</span>
+                            </li>
+                            <li class="flex items-center gap-1">
+                                <span class="add-on-inv" style="color: #888;">+$5 Inventory Management</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="p-6 sm:px-8">
+                        <p class="mt-2 sm:mt-4">
+                            <strong class="text-3xl font-bold text-gray-900 sm:text-4xl">$<span
+                                    id="totalPrice3">25</span> </strong>
+                            <span class="text-sm font-medium text-gray-700">/month</span>
+                        <p class="card-price-monthly" id="card1Price">(paid monthly)</p>
+                        </p>
+                        <a class="mt-4 block rounded border border-blue-600 bg-blue-600 px-12 py-3 text-center text-sm font-medium text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-600 sm:mt-6"
+                            href="#">Get Started</a>
+                    </div>
+                </div>
+            </div>
+            <button id="toggleButtonFeatures"
+                class="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-600 flex items-center justify-center w-full"
+                style="margin-top: 5vh;">
+                <span id="toggleFButton">View All Features</span>
+                <svg id="chevronIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <!-- code for table -->
+    <div class="py-14 text-gray-600 hidden" id="featureList">
+        <div class="relative max-w-xl mx-auto space-y-3 px-4 text-center">
+            <h3 class="text-blue-600 font-semibold">Pricing</h3>
+            <p class="text-gray-800 text-3xl font-semibold">Compare our plans and find yours</p>
+            <div class="max-w-xl">
+                <p></p>
+            </div>
+        </div>
+        <div class="sticky top-0 py-6 border-b bg-white">
+            <div class="max-w-screen-xl mx-auto">
+                <ul class="ml-auto flex gap-x-6 px-4 max-w-3xl">
+                    <li class="flex flex-col w-full">
+                        <div class="flex-grow">
+                            <div class="text-gray-700 font-medium">Loyalty</div>
+                        </div>
+                        <div class="flex-grow flex items-end">
+                            <div class="text-gray-800 text-3xl font-semibold">
+                                <span>$10</span>
+                                <span class="text-xl text-gray-600 font-normal">/mo</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button
+                                class="px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-blue-600 hover:bg-blue-600 active:bg-blue-700">
+                                Get Started
+                            </button>
+                        </div>
+                    </li>
+                    <li class="flex flex-col w-full">
+                        <div class="flex-grow">
+                            <div class="text-gray-700 font-medium">Workforce Management</div>
+                        </div>
+                        <div class="flex-grow flex items-end">
+                            <div class="text-gray-800 text-3xl font-semibold">
+                                <span>$15</span>
+                                <span class="text-xl text-gray-600 font-normal">/mo</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button
+                                class="px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-blue-600 hover:bg-blue-600 active:bg-blue-700">
+                                Get Started
+                            </button>
+                        </div>
+                    </li>
+                    <li class="flex flex-col w-full">
+                        <div class="flex-grow">
+                            <div class="text-gray-700 font-medium">Loyalty and Workforce Management</div>
+                        </div>
+                        <div class="flex-grow flex items-end">
+                            <div class="text-gray-800 text-3xl font-semibold">
+                                <span>$25</span>
+                                <span class="text-xl text-gray-600 font-normal">/mo</span>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <button
+                                class="px-3 py-3 rounded-lg w-full font-semibold text-sm duration-150 text-white bg-blue-600 hover:bg-blue-600 active:bg-blue-700">
+                                Get Started
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-screen-xl mx-auto mt-10 space-y-4 px-4 overflow-auto">
+            <table class="w-full table-auto text-sm text-left">
+                <thead class="text-gray-600 font-medium border-b">
+                    <tr>
+                        <th class="z-20 top-12 py-6">
+                            <div class="flex items-center gap-x-3">
+                                <h4 class="text-gray-800 text-xl font-medium">A) Loyalty Program</h4>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 divide-y">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Customer Management</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Customer Grouping for Personalized Offers</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Email Marketing Automation</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Referral Rewards</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Departments & Permissions</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Printable Coupons</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Point of Sale Integration</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Loyalty & HR Reports</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Basic Support</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <!-- Add more feature rows as needed -->
+                </tbody>
+            </table>
+            <table class="w-full table-auto text-sm text-left">
+                <thead class="text-gray-600 font-medium border-b">
+                    <tr>
+                        <th class="z-20 top-12 py-6">
+                            <div class="flex items-center gap-x-3">
+                                <h4 class="text-gray-800 text-xl font-medium">B) HR Management</h4>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 divide-y">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Basic Scheduling</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Auto Scheduling</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Time Tracking</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Mobile Application</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Employee Management</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Employee Onboarding</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">PTO & Time Off Controls</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Shift Swapping</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Departments & Permissions</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Point of Sale Integration</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Labor Cost Management</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Basic Support</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">-</td>
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+
+                        </td>
+
+                        <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                    fill="#1D4ED8" />
+                            </svg>
+                        </td>
+                    </tr>
+
+                    <!-- Add more feature rows as needed -->
+                </tbody>
+            </table>
+            <table class="w-full table-auto text-sm text-left">
+                <thead class="text-gray-600 font-medium border-b">
+                    <tr>
+                        <th class="z-20 top-12 py-6">
+                            <div class="flex items-center gap-x-3">
+                                <h4 class="text-gray-800 text-xl font-medium">C) Business Analytics</h4>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="text-gray-600 divide-y">
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Sales Report</td>
+
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Purchase Report</td>
+
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Gross Profit Report</td>
+
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Stock Level Report</td>
+
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Inventory Forecast Report</td>
+
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Discount Report</td>
+
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 whitespace-nowrap">Customer Report</td>
+
+                    </tr>
+
+
+                    <!-- Add more feature rows as needed -->
+                </tbody>
+            </table>
+            <div class="mt-8 hidden" id="bAnalytics">
+                <div class="bg-blue-100 p-4 text-center text-blue-800 font-medium">
+                    Including Business Analytics Report as Complementary
+                </div>
+                <div id="featureList" class="mt-4 ">
+                    <table class="w-full table-auto text-sm text-left">
+
+                        <tbody class="text-gray-600 divide-y">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">Point of Sale Integration</td>
+                                <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                        <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                            fill="#1D4ED8" />
+                                    </svg>
+
+                                </td>
+                                <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                        <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                            fill="#1D4ED8" />
+                                    </svg>
+
+                                </td>
+
+                                <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                        <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                            fill="#1D4ED8" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">Loyalty & HR Reports (Basic Reports)</td>
+                                <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                        <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                            fill="#1D4ED8" />
+                                    </svg>
+
+                                </td>
+                                <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                        <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                            fill="#1D4ED8" />
+                                    </svg>
+
+                                </td>
+
+                                <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                        <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                            fill="#1D4ED8" />
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">Point of Sale Integration</td>
+                                <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                        <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                            fill="#1D4ED8" />
+                                    </svg>
+
+                                </td>
+                                <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                        <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                            fill="#1D4ED8" />
+                                    </svg>
+
+                                </td>
+
+                                <td class="text-center w-[250px] px-6 py-4 whitespace-nowrap">
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" class="mx-auto my-auto">
+                                        <rect width="32" height="32" rx="16" fill="#E8EDFB" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8162 12.207C22.0701 12.4737 22.0597 12.8957 21.793 13.1495L14.0893 20.4829C13.9577 20.6081 13.7808 20.6742 13.5993 20.666C13.4179 20.6577 13.2477 20.5758 13.128 20.4391L10.1651 17.0545C9.92254 16.7775 9.95052 16.3563 10.2276 16.1138C10.5046 15.8713 10.9258 15.8992 11.1683 16.1763L13.6734 19.0379L20.8737 12.1838C21.1404 11.9299 21.5624 11.9403 21.8162 12.207Z"
+                                            fill="#1D4ED8" />
+                                    </svg>
+                                </td>
+                            </tr>
+
+
+                            <!-- Add more feature rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- code for table ends -->
+
+
+
+    <script>
+
+        const bAnalytics = document.getElementById('bAnalytics');
+
+        // code for toggle button
+        const toggleButtonF = document.getElementById('toggleButtonFeatures');
+        const featureList = document.getElementById('featureList');
+        const chevronIcon = document.getElementById('chevronIcon');
+        const buttonText = document.getElementById('toggleFButton');
+
+        toggleButtonF.addEventListener('click', () => {
+            featureList.classList.toggle('hidden');
+            if (featureList.classList.contains('hidden')) {
+                buttonText.textContent = 'View All Features';
+                chevronIcon.innerHTML = '<path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />';
+            } else {
+                buttonText.textContent = 'Hide Features';
+                chevronIcon.innerHTML = '<path fill-rule="evenodd" d="M14.707 12.707a1 1 0 01-1.414 0L10 9.414l-3.293 3.293a1 1 0 01-1.414-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 010 1.414z" clip-rule="evenodd" />';
+            }
+        });
+        // code ends for toggle button 
+
+        // code for month and annually toggle
+        const monthlyBtn = document.getElementById('monthlyBtn');
+        const annuallyBtn = document.getElementById('annuallyBtn');
+        const basePrice1 = document.getElementById('basePrice1');
+        const totalPrice1 = document.getElementById('totalPrice1');
+        const basePrice2 = document.getElementById('basePrice2');
+        let totalPrice2 = document.getElementById('totalPrice2');
+        let basePrice3 = document.getElementById('basePrice3');
+        let totalPrice3 = document.getElementById('totalPrice3');
+        let isMonthly = true;
+        const monthlyBasePrice1 = 10;
+        const monthlyBasePrice2 = 15;
+        const monthlyBasePrice3 = 25;
+        const annualBasePrice1 = monthlyBasePrice1 * 12 * 0.8; // 20% discount
+        let annualBasePrice2 = monthlyBasePrice2 * 12 * 0.8; // 20% discount
+        let annualBasePrice3 = monthlyBasePrice3 * 12 * 0.8; // 20% discount
+
+
+        let card1Price = document.querySelectorAll('.card-price-monthly');
+        var addOnsObj = {
+            'add-on-auto': 0,
+            'add-on-sms': 0,
+            'add-on-inventory': 0
+        };
+        monthlyBtn.addEventListener('click', () => {
+            isMonthly = true;
+            monthlyBtn.classList.add('active');
+            annuallyBtn.classList.remove('active');
+            updatePrices();
+        });
+
+        annuallyBtn.addEventListener('click', () => {
+            isMonthly = false;
+            annuallyBtn.classList.add('active');
+            monthlyBtn.classList.remove('active');
+            updatePrices();
+        });
+        function updatePrices() {
+
+            basePrice1.textContent = isMonthly ? monthlyBasePrice1 : (annualBasePrice1 / 12);
+            basePrice2.textContent = isMonthly ? monthlyBasePrice2 : (annualBasePrice2 / 12);
+            basePrice3.textContent = isMonthly ? monthlyBasePrice3 : (annualBasePrice3 / 12);
+
+
+            card1Price.forEach((item) => {
+                item.textContent = isMonthly ? "(paid monthly)" : "(paid annually)";
+            })
+            totalPrice1.textContent = parseInt(basePrice1.textContent) + parseInt(addOnsObj['add-on-sms']) + parseInt(addOnsObj['add-on-inventory']);
+            totalPrice2.textContent = parseInt(basePrice2.textContent) + parseInt(addOnsObj['add-on-auto']) + parseInt(addOnsObj['add-on-inventory']);
+            totalPrice3.textContent = parseInt(basePrice3.textContent) + parseInt(addOnsObj['add-on-sms']) + parseInt(addOnsObj['add-on-auto']) + parseInt(addOnsObj['add-on-inventory']);
+
+
+
+        }
+        // code ends for month and annually toggle
+
+        // code for add-ons
+
+        // get elements to see change
+        const addOn1Toggle = document.getElementById('addOn1Toggle');
+        const addOn2Toggle = document.getElementById('addOn2Toggle');
+        const addOn3Toggle = document.getElementById('addOn3Toggle');
+        const addOn4Toggle = document.getElementById('addOn4Toggle');
+
+        // get elements to hide and show
+        const addOnToggles = document.querySelectorAll('.add-on-toggle');
+
+        // get elements to higlight
+        const addOnSMS = document.querySelectorAll('.add-on-sms');
+        const addOnAuto = document.querySelectorAll('.add-on-auto');
+        const addOnInv = document.querySelectorAll('.add-on-inv');
+        var productSelection = document.getElementById('productSelection');
+        const productSize = document.getElementById('productSize');
+
+
+
+
+
+        addOn1Toggle.addEventListener('change', function () {
+            // If the checkbox is checked, remove the 'hidden' class from the other add-ons
+
+            if (this.checked) {
+
+                addOnToggles.forEach((item) => {
+                    item.classList.remove('hidden');
+                })
+
+            } else {
+                // If the checkbox is unchecked, add the 'hidden' class back to the other add-ons
+                addOnToggles.forEach((item) => {
+                    item.classList.add('hidden');
+                })
+            }
+        });
+        addOn2Toggle.addEventListener('change', function () {
+            console.log('addOn2Toggle', this.checked);
+            if (this.checked) {
+
+                addOnAuto.forEach((item) => {
+                    item.style.color = 'black';
+                })
+                addOnsObj['add-on-auto'] = 5;
+            } else {
+                addOnAuto.forEach((item) => {
+                    item.style.color = '#888';
+                })
+                addOnsObj['add-on-auto'] = 0;
+            }
+
+            updatePrices();
+
+
+
+        })
+
+        addOn3Toggle.addEventListener('change', function () {
+            console.log('addOn3Toggle', this.checked);
+            if (this.checked) {
+                addOnSMS.forEach((item) => {
+                    item.style.color = 'black';
+                })
+                addOnsObj['add-on-sms'] = 10;
+            } else {
+                addOnSMS.forEach((item) => {
+                    item.style.color = '#888';
+                })
+                addOnsObj['add-on-sms'] = 0;
+            }
+
+            updatePrices();
+
+
+
+
+        })
+
+        addOn4Toggle.addEventListener('change', function () {
+            console.log('addOn4Toggle', this.checked);
+            if (this.checked) {
+                // To show the div
+                productSelection.classList.remove('hidden');
+                addOnInv.forEach((item) => {
+                    item.style.color = 'black';
+                })
+                if (productSize.value == "call for custom price of ") {
+                    addOnsObj['add-on-inventory'] = 0;
+                }
+                else {
+                    addOnsObj['add-on-inventory'] = parseInt(productSize.value);
+                }
+
+                bAnalytics.classList.remove('hidden');
+
+
+            } else {
+                addOnInv.forEach((item) => {
+                    item.style.color = '#888';
+                })
+                // To hide the div
+                productSelection.classList.add('hidden');
+                addOnsObj['add-on-inventory'] = 0;
+
+
+                bAnalytics.classList.add('hidden');
+            }
+            updatePrices();
+
+
+
+
+        })
+
+
+
+        // code ends for add-ons
+
+        // code for inventory custom price
+
+        const inventoryPrices = {
+            '1-500': 5,
+            '501-1000': 10,
+            '1001-2000': 15,
+            '2001-3000': 20,
+            '3000+': 'Get a Call'
+        };
+        function updateInvPrices() {
+            let selectedSize = productSize.value;
+            console.log('productSize', productSize.value);
+            if (productSize.value == "call for custom price of ") {
+                addOnsObj['add-on-inventory'] = 0;
+            }
+            else {
+                addOnsObj['add-on-inventory'] = parseInt(productSize.value);
+            }
+
+            addOnInv.forEach((item) => {
+                item.textContent = "+$" + selectedSize + " Inventory Management";
+            })
+
+
+            updatePrices();
+
+
+
+        }
+
+
+
+        productSize.addEventListener('change', updateInvPrices);
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

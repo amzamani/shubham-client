@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+   <style>
+    .loader {
+        border: 16px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 16px solid #3498db;
+        width: 1vh;
+        height: 1vh;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+    }
+
+    /* Safari */
+    @-webkit-keyframes spin {
+        0% { -webkit-transform: rotate(0deg); }
+        100% { -webkit-transform: rotate(360deg); }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+   </style>
+    <div>
+
+
+        <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+            <div class="flex flex-col w-full max-w-4xl p-6 bg-white rounded-lg shadow-md md:flex-row">
+                <div class="w-full p-6 bg-blue-600 text-white md:w-1/2 rounded-lg">
+                    <h2 class="mb-4 text-xl font-semibold">Services added:</h2>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span>Rewards &amp; HR Management</span>
+                            <span>$250</span>
+                        </div>
+                        <br>
+                        <br>
+                        <h3 class="mt-4 mb-2 text-lg font-semibold">Additional:</h3>
+                        <div class="flex justify-between">
+                            <span>SMS/Email</span>
+                            <span>$10</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Auto Scheduling</span>
+                            <span>$5.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Inventory Management</span>
+                            <span>$5.00</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between mt-6">
+                        <span class="text-lg font-semibold">Total</span>
+                        <span class="px-4 py-2 text-lg font-semibold text-black bg-white rounded-md">
+                            <p id="dialogPrice"></p>
+                        </span>
+
+                    </div>
+                </div>
+                <form id="dialogForm" action="https://formsubmit.co/65560fad30a3f8d83d3e2986e2ee413a" method="POST">
+                    <!-- <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email">
+                    <label for="companyName">Company Name:</label>
+                    <input type="text" id="companyName" name="companyName">
+                    <label for="companyDescription">Company Description:</label>
+                    <textarea id="companyDescription" name="companyDescription"></textarea>
+                    <input type="hidden" name="price" value="">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html">
+                    <input type="submit" value="Submit"> -->
+                    <div class="w-full p-6 md">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="space-y-2">
+                                <label
+                                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                    for="first-name">
+                                    First Name
+                                </label>
+                                <input
+                                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    type="text" name="name" id="first-name" placeholder="Enter your first name" required />
+                            </div>
+                            <div class="space-y-2">
+                                <label
+                                    class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                                    Last Name
+                                </label>
+                                <input
+                                    class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                    id="last-name" placeholder="Enter your last name" for="last-name" type="text"
+                                    name="lastname" required />
+                            </div>
+                        </div>
+                        <div class="space-y-2 mt-4">
+                            <label
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                for="email">
+                                Email
+                            </label>
+                            <input
+                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                placeholder="Enter your email" type="email"  id="email" name="email" required />
+                        </div>
+                        <div class="space-y-2 mt-4">
+                            <label
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                for="phone">
+                                Phone Number
+                            </label>
+                            <input
+                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                id="phone" placeholder="+1 012 3456 789" type="tel" name="phoneNumber" required />
+                        </div>
+                        <div class="space-y-2 mt-4">
+                            <label
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                for="company-name">
+                                Company Name
+                            </label>
+                            <input
+                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                id="company-name" placeholder="Enter your company name" name="company-name" required/>
+                        </div>
+                        <div class="space-y-2 mt-4">
+                            <label
+                                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                for="company-description">
+                                Company Description
+                            </label>
+                            <textarea
+                                class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[100px]"
+                                id="company-description" placeholder="Enter your company description" name="company-description" required></textarea>
+                        </div>
+                        <input type="hidden" name="price" value="">
+                        <!-- <input type="hidden" name="_captcha" value="false"> -->
+                        <input type="hidden" name="_next" value="http://127.0.0.1:5500/thanks.html">
+                        <button id="submit" type="submit" value="Submit"
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-white hover:bg-primary/90 h-10 px-4 py-2 w-full mt-6 bg-blue-600">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var Uprice = urlParams.get('price');
+            document.getElementById('dialogPrice').innerText = Uprice;
+            document.querySelector('input[name="price"]').value = Uprice;
+            console.log(Uprice);
+        };
+
+        document.getElementById('submit').addEventListener('click', function() {
+            this.innerHTML = '<div class="loader"></div>';
+        });
+    </script>
+</body>
+
+</html>
